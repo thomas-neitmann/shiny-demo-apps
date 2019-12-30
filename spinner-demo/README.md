@@ -9,7 +9,7 @@ In addition to more than 10 built-in spinners, the package offers the possibilit
 Check out my example shiny app to see `shinycustomloader` in action. You can run it by pasting the following commands into your `R` console:
 
 ```r
-required_pkgs <- c("shiny", "ggplot2", "shinycustomloader")
+required_pkgs <- c("shiny", "ggplot2", "scales", "shinycustomloader")
 installed_pkgs <- installed.packages()
 for (pkg in required_pkgs) {
   if (!pkg %in% installed_pkgs) install.packages(pkg)

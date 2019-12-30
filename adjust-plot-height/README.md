@@ -1,4 +1,4 @@
-# Let Your Users Decided on the Plot Height
+# Let Your Users Decide the Plot Height
 
 When you create a `shiny` app you rarely know the size of the screen on which your users will use the app. It could be a small 12'' laptop or a desktop with a 20'' screen. Thus, the single default value that you can provide for the height of your `plotOutput()` will inevitably be a bad choice for somer users.
 

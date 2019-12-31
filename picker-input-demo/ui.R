@@ -1,10 +1,10 @@
 library(shiny)
 library(shinyWidgets)
 data(iris)
-choices <- colnames(iris)[1:4]
 
 ui <- fluidPage(
   titlePanel("selectInput vs. pickerInput"),
+  
   fluidRow(
     column(
       width = 6,

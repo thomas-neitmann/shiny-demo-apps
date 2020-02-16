@@ -27,7 +27,7 @@ server <- function(input, output, session) {
     # The event_data() function returns a one line data.frame like this
     #   curveNumber pointNumber        x y
     # 1           0           4 3.811954 5
-    plotly::event_data("plotly_click")
+    plotly::event_data("plotly_click", source = "continent_plot")
   })
 
   highlight <- reactive({
@@ -43,7 +43,8 @@ server <- function(input, output, session) {
     } else {
       hghl <- highlight()
     }
-    bar_chart(continents, continent, pop, highlight = hghl)
+    plot <- bar_chart(continents, continent, pop, highlight = hghl)
+    plotly::ggplotly(plot, source = "continent_plot")
   })
 
   output$country_plot <- plotly::renderPlotly({

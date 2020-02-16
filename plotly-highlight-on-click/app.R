@@ -37,9 +37,13 @@ server <- function(input, output, session) {
   })
 
   output$continent_plot <- plotly::renderPlotly({
-    # If no bar has been clicked yet, highlight() is NULL which creates
-    # a plot with no bars being highlighted
-    bar_chart(continents, continent, pop, highlight = highlight())
+    # If no bar has been clicked yet, highlight() is charater(0)
+    if (length(highlight()) == 0) {
+      hghl <- NULL
+    } else {
+      hghl <- highlight()
+    }
+    bar_chart(continents, continent, pop, highlight = hghl)
   })
 
   output$country_plot <- plotly::renderPlotly({
